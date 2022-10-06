@@ -41,6 +41,8 @@ def update_by_arc69_jsons():
 
         asset_id = filename.split('.')[0]
 
+        if len(sys.argv) > 1 and asset_id not in sys.argv: continue
+
         with open(os.path.join(settings.input_path,filename)) as file:
             arc69_data = json.load(file)
             meta_data = json.dumps(arc69_data)
